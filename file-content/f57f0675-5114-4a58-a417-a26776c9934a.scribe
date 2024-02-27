@@ -1,0 +1,6 @@
+resource "file-content" "f57f0675-5114-4a58-a417-a26776c9934a" {
+  uuid = "f57f0675-5114-4a58-a417-a26776c9934a"
+  content = "echo \"Hello, this workflow was triggered after the NSX segments count check query\" "
+  dateCreated = "2023-10-03T11:03:04.000Z"
+  lastUpdated = "2023-10-03T11:03:04.000Z"
+}
