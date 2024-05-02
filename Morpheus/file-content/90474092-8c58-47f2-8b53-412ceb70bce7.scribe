@@ -1,6 +1,0 @@
-resource "file-content" "90474092-8c58-47f2-8b53-412ceb70bce7" {
-  uuid = "90474092-8c58-47f2-8b53-412ceb70bce7"
-  content = "echo $${instance}"
-  dateCreated = "2024-01-12T14:53:44.000Z"
-  lastUpdated = "2024-01-12T14:53:44.000Z"
-}
