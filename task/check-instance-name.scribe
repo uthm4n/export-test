@@ -1,0 +1,16 @@
+resource "task" "check-instance-name" {
+  name = "check-instance-name"
+  uuid = "92d05159-3fa7-48ba-839d-13fcc60c849a"
+  dateCreated = "2024-04-30T13:47:21.000Z"
+  executeTarget = "local"
+  labels = [ "encode spaces correctly", "encoding-workflow", "task 1" ]
+  lastUpdated = "2024-04-30T14:12:13.000Z"
+  options = [
+    {
+      content = { uuid = "d4c4d66e-267d-4a00-9e5a-0627df4bc5a1" }
+      optionType = { code = "groovyScript" }
+    }
+  ]
+  resultType = "value"
+  taskType = { code = "groovyTask" }
+}

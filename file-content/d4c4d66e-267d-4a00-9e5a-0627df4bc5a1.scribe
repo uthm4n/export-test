@@ -1,0 +1,18 @@
+resource "file-content" "d4c4d66e-267d-4a00-9e5a-0627df4bc5a1" {
+  uuid = "d4c4d66e-267d-4a00-9e5a-0627df4bc5a1"
+  content = <<EOFSCRIBE
+import java.net.URLEncoder
+
+def instanceName = "${instance.name.replace(' ', '%20')}"
+
+println "${instanceName}"
+println instanceName
+
+
+// return "${instanceName.format([' ': '%20'], 'UTF-8')}"
+
+// return "${instanceName.contains(' ') ? URLEncoder.encode(instanceName.replace(' ', '%20')) : instanceName}" as String
+EOFSCRIBE
+  dateCreated = "2024-04-30T13:47:21.000Z"
+  lastUpdated = "2024-05-01T09:35:34.000Z"
+}
