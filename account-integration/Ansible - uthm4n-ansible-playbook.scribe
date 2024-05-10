@@ -1,0 +1,18 @@
+resource "account-integration" "Ansible - uthm4n/ansible-playbook" {
+  name = "Ansible - uthm4n/ansible-playbook"
+  uuid = "b1fdb45b-edf6-415d-a56c-0c1910656452"
+  config = {
+    ansibleCommandBus = "on"
+    ansibleGalaxyEnabled = null
+    ansibleGroupVars = "/vars"
+    ansibleHostVars = "/hosts"
+    ansiblePlaybooks = "/"
+    ansibleRoles = "/roles"
+    ansibleVerbose = null
+    cacheEnabled = null
+    defaultBranch = "main"
+  }
+  integrationType = { code = "ansible" }
+  serviceUrl = "https://github.com/uthm4n/ansible-playbook"
+  type = "ansible"
+}

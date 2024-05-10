@@ -1,0 +1,19 @@
+resource "task" "ansible-vault test" {
+  name = "ansible-vault test"
+  uuid = "0fd4a136-4557-4fb3-9557-7696f1520e26"
+  dateCreated = "2024-05-09T13:46:25.000Z"
+  executeTarget = "local"
+  labels = [ "ansible vault" ]
+  lastUpdated = "2024-05-10T08:35:51.000Z"
+  options = [
+    {
+      optionType = { code = "ansibleGitId" }
+      value = { name = "Ansible - uthm4n/ansible-playbook" }
+    },
+    {
+      optionType = { code = "ansiblePlaybook" }
+      value = "read-from-ansible-vault.yml"
+    }
+  ]
+  taskType = { code = "ansibleTask" }
+}
