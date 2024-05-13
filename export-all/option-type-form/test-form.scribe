@@ -1,0 +1,81 @@
+resource "option-type-form" "test-form" {
+  code = "test-form"
+  name = "test"
+  uuid = "4c1cea03-bd2b-4822-85b8-30bc93cea80b"
+  config = {
+    enableVar = false
+    form = ""
+    formField = ""
+    formOptions = ""
+    formType = "static"
+  }
+  options = [
+    {
+      code = "5920f706-27cf-4329-9388-43e89fba0888"
+      name = "5920f706-27cf-4329-9388-43e89fba0888"
+      uuid = "49482349-fc2a-4e6a-b983-95b14a081069"
+      config = { addon = "", addonPosition = "right" }
+      defaultValue = "5"
+      fieldContext = "config.customOptions"
+      fieldLabel = "group"
+      fieldName = "groupInput"
+      formField = true
+      refCode = "5920f706-27cf-4329-9388-43e89fba0888"
+      type = "group"
+    },
+    {
+      code = "8e25a2a6-ddea-40c4-bc6c-caad5424b5a9"
+      name = "8e25a2a6-ddea-40c4-bc6c-caad5424b5a9"
+      uuid = "02773e43-7e82-4073-9e88-17e0678d1e81"
+      config = {
+        addon = ""
+        addonPosition = "right"
+        cloudType = ""
+        filterResource = false
+        group = "5920f706-27cf-4329-9388-43e89fba0888"
+        groupFieldType = "field"
+        groupId = ""
+        instanceTypeCode = ""
+        instanceTypeFieldCode = ""
+        instanceTypeFieldType = "field"
+      }
+      displayOrder = 1
+      fieldContext = "config.customOptions"
+      fieldLabel = "cloud"
+      fieldName = "cloudInput"
+      formField = true
+      refCode = "8e25a2a6-ddea-40c4-bc6c-caad5424b5a9"
+      type = "cloud"
+    },
+    {
+      code = "736a1d89-f048-46d6-b2a5-d0169794a113"
+      name = "736a1d89-f048-46d6-b2a5-d0169794a113"
+      uuid = "98360f7e-c711-4b00-90fe-162f1108b911"
+      config = {
+        addon = ""
+        addonPosition = "right"
+        defaultValue = ""
+      }
+      displayOrder = 2
+      fieldContext = "config.customOptions"
+      fieldLabel = "Input 3"
+      fieldName = "input3"
+      formField = true
+      refCode = "736a1d89-f048-46d6-b2a5-d0169794a113"
+      type = "logoSelector"
+    },
+    {
+      code = "pluginApiDatasetExample"
+      name = "Plugin API Dataset Provider"
+      uuid = "71314424-05ca-4a19-918e-e298c8efb427"
+      description = "A list of networks retrieved from the Morpheus plugin API"
+      editable = true
+      fieldContext = "config.customOptions"
+      fieldLabel = "Dataset Plugin Provider Test"
+      fieldName = "pluginApiDatasetExample"
+      optionSource = "pluginApiDatasetExample"
+      optionSourceType = "example"
+      type = "select"
+    }
+  ]
+}

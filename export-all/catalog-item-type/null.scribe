@@ -1,0 +1,10 @@
+resource "catalog-item-type" "null" {
+  name = "Test Catalog Item"
+  uuid = "9ed74c1a-cdd1-4970-935b-005042f0162e"
+  dateCreated = "2024-04-26T12:04:44.000Z"
+  form = { code = "test-form" }
+  formType = "form"
+  labels = [ { name = "exported" } ]
+  lastUpdated = "2024-05-13T07:36:16.000Z"
+  refType = "InstanceType"
+}
