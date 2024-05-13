@@ -1,11 +1,10 @@
 resource "catalog-item-type" "null" {
-  name = "Test Catalog"
-  uuid = "b3b11148-f6af-457b-960a-9f6e00ad44cd"
-  dateCreated = "2024-05-09T11:22:45.000Z"
+  name = "[replication for export bug]"
+  uuid = "5a424c20-34ff-4ceb-9d01-43e108813bbb"
+  dateCreated = "2024-05-13T13:52:55.000Z"
   form = { code = "test-form" }
   formType = "form"
-  labels = [ { name = "exported" } ]
-  lastUpdated = "2024-05-13T10:48:08.000Z"
+  labels = [ { name = "exportbug" }, { name = "exported" } ]
+  lastUpdated = "2024-05-13T13:52:55.000Z"
   refType = "InstanceType"
-  visibility = "public"
 }
