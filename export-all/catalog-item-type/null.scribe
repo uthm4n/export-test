@@ -1,11 +1,11 @@
 resource "catalog-item-type" "null" {
-  name = "Test Catalog Item"
-  uuid = "9ed74c1a-cdd1-4970-935b-005042f0162e"
-  dateCreated = "2024-04-26T12:04:44.000Z"
+  name = "Test Catalog"
+  uuid = "b3b11148-f6af-457b-960a-9f6e00ad44cd"
+  dateCreated = "2024-05-09T11:22:45.000Z"
   form = { code = "test-form" }
   formType = "form"
   labels = [ { name = "exported" } ]
-  lastUpdated = "2024-05-13T10:29:21.000Z"
-  logoSettings = "{\"saturation\":{\"min\":70,\"max\":100},\"iconLabel\":\"\",\"seed\":\"test\",\"lightness\":{\"min\":45,\"max\":65},\"shift\":{\"min\":60,\"max\":300},\"hue\":{\"min\":0,\"max\":360},\"fontSize\":18,\"type\":\"identicon\",\"variation\":{\"min\":5,\"max\":20,\"enabled\":true},\"fontColor\":\"#000000\"}"
+  lastUpdated = "2024-05-13T10:48:08.000Z"
   refType = "InstanceType"
+  visibility = "public"
 }
