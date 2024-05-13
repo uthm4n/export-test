@@ -5,6 +5,7 @@ resource "catalog-item-type" "null" {
   form = { code = "test-form" }
   formType = "form"
   labels = [ { name = "exported" } ]
-  lastUpdated = "2024-05-13T07:36:16.000Z"
+  lastUpdated = "2024-05-13T10:29:21.000Z"
+  logoSettings = "{\"saturation\":{\"min\":70,\"max\":100},\"iconLabel\":\"\",\"seed\":\"test\",\"lightness\":{\"min\":45,\"max\":65},\"shift\":{\"min\":60,\"max\":300},\"hue\":{\"min\":0,\"max\":360},\"fontSize\":18,\"type\":\"identicon\",\"variation\":{\"min\":5,\"max\":20,\"enabled\":true},\"fontColor\":\"#000000\"}"
   refType = "InstanceType"
 }
