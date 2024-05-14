@@ -1,3 +1,0 @@
-resource "label" "exportbug" {
-  name = "exportbug"
-}
