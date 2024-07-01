@@ -1,0 +1,14 @@
+resource "task" "ansible debug - print cypher" {
+  name = "ansible debug - print cypher"
+  uuid = "5f47c0d6-7c35-4c23-92ac-93bd8730cfb2"
+  dateCreated = "2024-05-10T10:24:47.000Z"
+  executeTarget = "local"
+  lastUpdated = "2024-05-10T10:26:19.000Z"
+  options = [
+    {
+      content = { uuid = "d84761be-1bea-44c7-a9f9-1e35f8480bc7" }
+      optionType = { code = "groovyScript" }
+    }
+  ]
+  taskType = { code = "groovyTask" }
+}

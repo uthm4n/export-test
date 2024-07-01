@@ -1,0 +1,12 @@
+resource "task-set" "Ansible workflow debug" {
+  name = "Ansible workflow debug"
+  uuid = "895b6bbc-4c27-4a77-b2fe-b1180f14e1ea"
+  dateCreated = "2024-05-10T09:57:07.000Z"
+  labels = [ "ansible", "vault" ]
+  lastUpdated = "2024-05-13T08:34:07.000Z"
+  taskSetTasks = [
+    { uuid = "244e6e8a-8da3-4bab-97a0-08dd5c6aa54a" },
+    { uuid = "27ec6b6b-bf58-44c4-af71-c6493ae54835" }
+  ]
+  taskSetType = "operation"
+}
