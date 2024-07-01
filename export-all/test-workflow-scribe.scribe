@@ -1,0 +1,113 @@
+resource "task-set" "Ansible workflow debug" {
+  name = "Ansible workflow debug"
+  uuid = "895b6bbc-4c27-4a77-b2fe-b1180f14e1ea"
+  dateCreated = "2024-05-10T09:57:07.000Z"
+  labels = [ "ansible", "exported", "vault" ]
+  lastUpdated = "2024-07-01T10:13:45.000Z"
+  optionTypes = [ { code = "installAppInput" } ]
+  taskSetTasks = [
+    { uuid = "05a8048d-e6c4-4e54-a75e-b703cf91caeb" },
+    { uuid = "f14e010c-ec5f-46ff-a20b-b10183490edf" }
+  ]
+  taskSetType = "operation"
+}
+
+resource "option-type" "installAppInput" {
+  code = "installAppInput"
+  name = "install app input"
+  uuid = "81ffa17e-a181-4cfc-9b4e-7354f5dc233b"
+  displayValueOnDetails = true
+  fieldContext = "config.customOptions"
+  fieldLabel = "Install App Input"
+  fieldName = "installAppInput"
+  optionList = { name = "decisions" }
+  optionSource = "list"
+  refCode = "installAppInput"
+  type = "select"
+}
+
+resource "option-type-list" "decisions" {
+  name = "decisions"
+  uuid = "80ff580c-e0ca-4827-9fe5-e7a18addf44d"
+  initialDataset = "[{\"name\":\"yes\",\"value\":\"yes\"},{\"name\":\"no\",\"value\":\"no\"}]"
+  realTime = true
+  type = "manual"
+}
+
+resource "task-set-task" "f14e010c-ec5f-46ff-a20b-b10183490edf" {
+  uuid = "f14e010c-ec5f-46ff-a20b-b10183490edf"
+  task = { name = "ansible-vault test" }
+  taskOrder = 1
+  taskPhase = "operation"
+}
+
+resource "task" "ansible-vault test" {
+  name = "ansible-vault test"
+  uuid = "0fd4a136-4557-4fb3-9557-7696f1520e26"
+  dateCreated = "2024-05-09T13:46:25.000Z"
+  executeTarget = "local"
+  labels = [ "ansible vault" ]
+  lastUpdated = "2024-05-10T08:35:51.000Z"
+  options = [
+    {
+      optionType = { code = "ansibleGitId" }
+      value = { name = "Ansible - uthm4n/ansible-playbook" }
+    },
+    {
+      optionType = { code = "ansibleOptions" }
+      value = "--vault-password-file <%=cypher.read('secret/vault-pass')%>"
+    },
+    {
+      optionType = { code = "ansiblePlaybook" }
+      value = "read-from-ansible-vault.yml"
+    }
+  ]
+  taskType = { code = "ansibleTask" }
+}
+
+resource "account-integration" "Ansible - uthm4n/ansible-playbook" {
+  name = "Ansible - uthm4n/ansible-playbook"
+  uuid = "b1fdb45b-edf6-415d-a56c-0c1910656452"
+  config = {
+    ansibleCommandBus = "on"
+    ansibleGalaxyEnabled = null
+    ansibleGroupVars = "/vars"
+    ansibleHostVars = "/hosts"
+    ansiblePlaybooks = "/"
+    ansibleRoles = "/roles"
+    ansibleVerbose = null
+    cacheEnabled = null
+    defaultBranch = "main"
+  }
+  integrationType = { code = "ansible" }
+  serviceUrl = "https://github.com/uthm4n/ansible-playbook"
+  type = "ansible"
+}
+
+resource "task-set-task" "05a8048d-e6c4-4e54-a75e-b703cf91caeb" {
+  uuid = "05a8048d-e6c4-4e54-a75e-b703cf91caeb"
+  task = { name = "ansible debug - print cypher" }
+  taskPhase = "operation"
+}
+
+resource "task" "ansible debug - print cypher" {
+  name = "ansible debug - print cypher"
+  uuid = "5f47c0d6-7c35-4c23-92ac-93bd8730cfb2"
+  dateCreated = "2024-05-10T10:24:47.000Z"
+  executeTarget = "local"
+  lastUpdated = "2024-05-10T10:26:19.000Z"
+  options = [
+    {
+      content = { uuid = "d84761be-1bea-44c7-a9f9-1e35f8480bc7" }
+      optionType = { code = "groovyScript" }
+    }
+  ]
+  taskType = { code = "groovyTask" }
+}
+
+resource "file-content" "d84761be-1bea-44c7-a9f9-1e35f8480bc7" {
+  uuid = "d84761be-1bea-44c7-a9f9-1e35f8480bc7"
+  content = "println cypher.read('secret/vault-pass')"
+  dateCreated = "2024-05-10T10:24:47.000Z"
+  lastUpdated = "2024-05-10T10:26:19.000Z"
+}
