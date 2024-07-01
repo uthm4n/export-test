@@ -1,26 +1,25 @@
-resource "task-set" "Ansible workflow duplicated" {
+resource "task-set" "ansible-workflow-duplicated" {
   name = "Ansible workflow duplicated"
-  uuid = "895b6bbc-4c27-4a77-b2fe-b1180f14e1ea"
   dateCreated = "2024-05-10T09:57:07.000Z"
   labels = [ "ansible", "exported", "vault" ]
   lastUpdated = "2024-07-01T10:13:45.000Z"
   optionTypes = [ { code = "installAppInputDuplicated" } ]
   taskSetTasks = [
-    { uuid = "05a8048d-e6c4-4e54-a75e-b703cf91caeb" },
-    { uuid = "f14e010c-ec5f-46ff-a20b-b10183490edf" }
+    { uuid = "cypher-script" },
+    { uuid = "vault-test-dupe" }
   ]
   taskSetType = "operation"
 }
 
 resource "option-type" "installAppInputDuplicated" {
   code = "installAppInputDuplicated"
-  name = "install app input"
+  name = "install app input duplicated"
   uuid = "81ffa17e-a181-4cfc-9b4e-7354f5dc233b"
   displayValueOnDetails = true
   fieldContext = "config.customOptions"
   fieldLabel = "Install App Input"
   fieldName = "installAppInputDuplicated"
-  optionList = { name = "decisions" }
+  optionList = { name = "decisionsDuplicated" }
   optionSource = "list"
   refCode = "installAppInputDuplicated"
   type = "select"
@@ -28,22 +27,20 @@ resource "option-type" "installAppInputDuplicated" {
 
 resource "option-type-list" "decisionsDuplicated" {
   name = "decisionsDuplicated"
-  uuid = "80ff580c-e0ca-4827-9fe5-e7a18addf44d"
   initialDataset = "[{\"name\":\"yes\",\"value\":\"yes\"},{\"name\":\"no\",\"value\":\"no\"}]"
   realTime = true
   type = "manual"
 }
 
-resource "task-set-task" "f14e010c-ec5f-46ff-a20b-b10183490edf" {
-  uuid = "f14e010c-ec5f-46ff-a20b-b10183490edf"
-  task = { name = "ansible-vault test [Duplicated]" }
+resource "task-set-task" "vault-test-dupe" {
+  task = { name = "ansible-vault test duplicated" }
   taskOrder = 1
   taskPhase = "operation"
 }
 
-resource "task" "ansible-vault test [Duplicated]" {
-  name = "ansible-vault test [Duplicated]"
-  uuid = "0fd4a136-4557-4fb3-9557-7696f1520e26"
+resource "task" "ansible-vault-test-duplicated" {
+  name = "ansible-vault test duplicated"
+  uuid = "vault-test-dupe-2"
   dateCreated = "2024-05-09T13:46:25.000Z"
   executeTarget = "local"
   labels = [ "ansible vault" ]
@@ -65,7 +62,7 @@ resource "task" "ansible-vault test [Duplicated]" {
   taskType = { code = "ansibleTask" }
 }
 
-resource "account-integration" "Ansible - uthm4n/ansible-playbook" {
+resource "account-integration" "ansible-uthm4n-ansible-playbook-dupe" {
   name = "Ansible - uthm4n/ansible-playbook"
   uuid = "b1fdb45b-edf6-415d-a56c-0c1910656452"
   config = {
@@ -84,29 +81,28 @@ resource "account-integration" "Ansible - uthm4n/ansible-playbook" {
   type = "ansible"
 }
 
-resource "task-set-task" "05a8048d-e6c4-4e54-a75e-b703cf91caeb" {
-  uuid = "05a8048d-e6c4-4e54-a75e-b703cf91caeb"
-  task = { name = "ansible debug - print cypher" }
+resource "task-set-task" "cypher-debug" {
+  uuid = "cypher-debug"
+  task = { name = "ansible debug - print cypher dupe" }
   taskPhase = "operation"
 }
 
-resource "task" "ansible debug - print cypher [Duplicated]" {
+resource "task" "ansible-debug-print-cypher-dupe" {
   name = "ansible debug - print cypher [Duplicated]"
-  uuid = "5f47c0d6-7c35-4c23-92ac-93bd8730cfb2"
   dateCreated = "2024-05-10T10:24:47.000Z"
   executeTarget = "local"
   lastUpdated = "2024-05-10T10:26:19.000Z"
   options = [
     {
-      content = { uuid = "d84761be-1bea-44c7-a9f9-1e35f8480bc7" }
+      content = { uuid = "cypher-script" }
       optionType = { code = "groovyScript" }
     }
   ]
   taskType = { code = "groovyTask" }
 }
 
-resource "file-content" "d84761be-1bea-44c7-a9f9-1e35f8480bc7" {
-  uuid = "d84761be-1bea-44c7-a9f9-1e35f8480bc7"
+resource "file-content" "cypher-script" {
+  uuid = "cypher-script"
   content = "println cypher.read('secret/vault-pass')"
   dateCreated = "2024-05-10T10:24:47.000Z"
   lastUpdated = "2024-05-10T10:26:19.000Z"
