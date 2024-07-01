@@ -1,0 +1,13 @@
+resource "option-type" "installAppInput" {
+  code = "installAppInput"
+  name = "install app input"
+  uuid = "81ffa17e-a181-4cfc-9b4e-7354f5dc233b"
+  displayValueOnDetails = true
+  fieldContext = "config.customOptions"
+  fieldLabel = "Install App Input"
+  fieldName = "installAppInput"
+  optionList = { name = "decisions" }
+  optionSource = "list"
+  refCode = "installAppInput"
+  type = "select"
+}

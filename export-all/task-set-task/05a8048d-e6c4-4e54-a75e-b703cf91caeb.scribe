@@ -1,0 +1,5 @@
+resource "task-set-task" "05a8048d-e6c4-4e54-a75e-b703cf91caeb" {
+  uuid = "05a8048d-e6c4-4e54-a75e-b703cf91caeb"
+  task = { name = "ansible debug - print cypher" }
+  taskPhase = "operation"
+}

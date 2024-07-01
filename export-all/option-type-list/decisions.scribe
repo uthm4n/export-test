@@ -1,0 +1,7 @@
+resource "option-type-list" "decisions" {
+  name = "decisions"
+  uuid = "80ff580c-e0ca-4827-9fe5-e7a18addf44d"
+  initialDataset = "[{\"name\":\"yes\",\"value\":\"yes\"},{\"name\":\"no\",\"value\":\"no\"}]"
+  realTime = true
+  type = "manual"
+}

@@ -1,0 +1,6 @@
+resource "task-set-task" "f14e010c-ec5f-46ff-a20b-b10183490edf" {
+  uuid = "f14e010c-ec5f-46ff-a20b-b10183490edf"
+  task = { name = "ansible-vault test" }
+  taskOrder = 1
+  taskPhase = "operation"
+}
