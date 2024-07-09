@@ -1,0 +1,15 @@
+resource "file-content" "9b5f9ea7-a739-4d0f-bc9d-0118d47557c5" {
+  uuid = "9b5f9ea7-a739-4d0f-bc9d-0118d47557c5"
+  content = <<EOFSCRIBE
+DATASOURCE=`cat /opt/morpheus/conf/application.yml | yq eval '.environments.production | {"dataSource": {"url": .dataSource.url, "username": .dataSource.username, "password": .dataSource.password, "driverClassName": .dataSource.driverClassName}}' --output-format=json`
+
+if [ -n "$DATASOURCE" ]; then
+    echo "$DATASOURCE"  
+    exit 0  
+else
+    exit 1  
+fi
+EOFSCRIBE
+  dateCreated = "2024-07-06T13:39:12.000Z"
+  lastUpdated = "2024-07-08T23:34:29.000Z"
+}

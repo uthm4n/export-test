@@ -1,0 +1,24 @@
+resource "task" "getDatasourceDetails" {
+  code = "getDatasourceDetails"
+  name = "getDatasourceDetails"
+  uuid = "6f3334c5-45ba-412a-8666-ba61faeb839a"
+  dateCreated = "2024-07-06T13:39:12.000Z"
+  executeTarget = "local"
+  labels = [
+    "Step 1",
+    "get-datasource-from-application-yml",
+    "updateNetworkInterfaces"
+  ]
+  lastUpdated = "2024-07-08T22:55:34.000Z"
+  options = [
+    { optionType = { code = "host" }, value = "10.32.23.71" },
+    { optionType = { code = "port" }, value = "22" },
+    { optionType = { code = "shell.sudo" }, value = "on" },
+    {
+      content = { uuid = "9b5f9ea7-a739-4d0f-bc9d-0118d47557c5" }
+      optionType = { code = "script" }
+    }
+  ]
+  resultType = "json"
+  taskType = { code = "script" }
+}
