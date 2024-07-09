@@ -1,0 +1,109 @@
+resource "task-set" "ansible-workflow-duplicated" {
+  name = "Ansible workflow duplicated"
+  dateCreated = "2024-05-10T09:57:07.000Z"
+  labels = [ "ansible", "exported", "vault" ]
+  lastUpdated = "2024-07-01T10:13:45.000Z"
+  optionTypes = [ { code = "installAppInputDuplicated" } ]
+  taskSetTasks = [
+    { uuid = "cypher-script" },
+    { uuid = "vault-test-dupe" }
+  ]
+  taskSetType = "operation"
+}
+
+resource "option-type" "installAppInputDuplicated" {
+  code = "installAppInputDuplicated"
+  name = "install app input duplicated"
+  uuid = "81ffa17e-a181-4cfc-9b4e-7354f5dc233b"
+  displayValueOnDetails = true
+  fieldContext = "config.customOptions"
+  fieldLabel = "Install App Input"
+  fieldName = "installAppInputDuplicated"
+  optionList = { name = "decisionsDuplicated" }
+  optionSource = "list"
+  refCode = "installAppInputDuplicated"
+  type = "select"
+}
+
+resource "option-type-list" "decisionsDuplicated" {
+  name = "decisionsDuplicated"
+  initialDataset = "[{\"name\":\"yes\",\"value\":\"yes\"},{\"name\":\"no\",\"value\":\"no\"}]"
+  realTime = true
+  type = "manual"
+}
+
+resource "task-set-task" "vault-test-dupe" {
+  task = { name = "ansible-vault test duplicated" }
+  taskOrder = 1
+  taskPhase = "operation"
+}
+
+resource "task" "ansible-vault-test-duplicated" {
+  name = "ansible-vault test duplicated"
+  uuid = "vault-test-dupe-2"
+  dateCreated = "2024-05-09T13:46:25.000Z"
+  executeTarget = "local"
+  labels = [ "ansible vault" ]
+  lastUpdated = "2024-05-10T08:35:51.000Z"
+  options = [
+    {
+      optionType = { code = "ansibleGitId" }
+      value = { name = "Ansible - uthm4n/ansible-playbook" }
+    },
+    {
+      optionType = { code = "ansibleOptions" }
+      value = "--vault-password-file <%=cypher.read('secret/vault-pass')%>"
+    },
+    {
+      optionType = { code = "ansiblePlaybook" }
+      value = "read-from-ansible-vault.yml"
+    }
+  ]
+  taskType = { code = "ansibleTask" }
+}
+
+resource "account-integration" "ansible-uthm4n-ansible-playbook-dupe" {
+  name = "Ansible - uthm4n/ansible-playbook"
+  uuid = "b1fdb45b-edf6-415d-a56c-0c1910656452"
+  config = {
+    ansibleCommandBus = "on"
+    ansibleGalaxyEnabled = null
+    ansibleGroupVars = "/vars"
+    ansibleHostVars = "/hosts"
+    ansiblePlaybooks = "/"
+    ansibleRoles = "/roles"
+    ansibleVerbose = null
+    cacheEnabled = null
+    defaultBranch = "main"
+  }
+  integrationType = { code = "ansible" }
+  serviceUrl = "https://github.com/uthm4n/ansible-playbook"
+  type = "ansible"
+}
+
+resource "task-set-task" "cypher-debug" {
+  uuid = "cypher-debug"
+  task = { name = "ansible debug - print cypher dupe" }
+  taskPhase = "operation"
+}
+
+resource "task" "ansible-debug-print-cypher-dupe" {
+  name = "ansible debug - print cypher [Duplicated]"
+  dateCreated = "2024-05-10T10:24:47.000Z"
+  executeTarget = "local"
+  lastUpdated = "2024-05-10T10:26:19.000Z"
+  options = [
+    {
+      content = { uuid = "cypher-script" }
+      optionType = { code = "groovyScript" }
+    }
+  ]
+  taskType = { code = "groovyTask" }
+}
+
+resource "file-content" "cypher-script" {
+  uuid = "cypher-script"
+  content = "println cypher.read('secret/vault-pass')"
+  dateCreated = "2024-05-10T10:24:47.000Z"
+  lastUpdated = "2024-05-10T10:26:19.000Z"
+}
