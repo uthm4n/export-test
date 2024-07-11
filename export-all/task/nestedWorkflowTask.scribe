@@ -1,0 +1,17 @@
+resource "task" "nestedWorkflowTask" {
+  code = "nestedWorkflowTask"
+  name = "nestedWorkflowTask"
+  uuid = "124ba188-b4e1-437b-8668-b4e2b84f56f5"
+  dateCreated = "2024-07-11T17:55:11.000Z"
+  executeTarget = "local"
+  labels = [ "operational-nested-workflow" ]
+  lastUpdated = "2024-07-11T17:55:11.000Z"
+  options = [
+    { optionType = { code = "operationalWorkflowId" }, value = "24" },
+    {
+      optionType = { code = "operationalWorkflowName" }
+      value = "nested operational workflow"
+    }
+  ]
+  taskType = { code = "nestedWorkflow" }
+}

@@ -1,0 +1,5 @@
+resource "task-set-task" "89784a88-7751-4d6d-b7cf-3e85a86cc230" {
+  uuid = "89784a88-7751-4d6d-b7cf-3e85a86cc230"
+  task = { code = "nestedWorkflowTask" }
+  taskPhase = "operation"
+}

@@ -1,0 +1,9 @@
+resource "task-set" "operational workflow 1" {
+  name = "operational workflow 1"
+  uuid = "3a3722d8-66ab-4883-a3f7-602c83517186"
+  dateCreated = "2024-07-11T17:50:55.000Z"
+  labels = [ "opeartional-nested-workflow" ]
+  lastUpdated = "2024-07-11T17:59:47.000Z"
+  taskSetTasks = [ { uuid = "89784a88-7751-4d6d-b7cf-3e85a86cc230" } ]
+  taskSetType = "operation"
+}
