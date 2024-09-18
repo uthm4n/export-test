@@ -1,79 +1,10 @@
 resource "catalog-item-type" "9ba8890f-1ad1-4353-ab1e-18b13313d86b" {
   name = "custom windows server [with option types at instance type level]"
   uuid = "9ba8890f-1ad1-4353-ab1e-18b13313d86b"
-  config = {
-    name = "ueqbal2"
-    backup = {
-      backupRepository = 1
-      createBackup = true
-      jobAction = "clone"
-      jobRetentionCount = null
-      jobSchedule = 1
-      providerBackupType = -1
-      veeamManagedServer = "70986669-d32d-4120-bde9-903a19e7a0e1:af151f37-1a61-4702-9576-5081956ba423"
-    }
-    cloud = { name = "vmware", id = 1 }
-    config = {
-      createUser = true
-      customOptions = {
-        azureImageAcceptTerms = {
-          name = "<%=customOptions.azureImageAcceptTerms.name%>"
-          value = "<%=customOptions.azureImageAcceptTerms.value%>"
-        }
-        installAppInput = "<%=customOptions.decision%>"
-      }
-      isEC2 = false
-      isVpcSelectable = true
-      nestedVirtualization = null
-      noAgent = false
-      poolProviderType = null
-      resourcePoolId = "pool-414"
-      smbiosAssetTag = null
-      vmwareFolderId = "/"
-    }
-    copies = 1
-    defaultExpandAdvanced = false
-    group = { name = "vmware", id = "1" }
-    hideLock = true
-    hostName = "ueqbal2"
-    instance = { expireDays = "2", userGroup = { id = "" } }
-    layout = { code = "2f3d0849-c5ba-4074-8061-c233cf70b864", id = 1121 }
-    networkInterfaces = [
-      {
-        ipMode = ""
-        network = {
-          hasPool = false
-          id = "network-141"
-          idName = "VLAN0005 - vCD Managed Pool 2"
-        }
-        primaryInterface = true
-        showNetworkDhcpLabel = true
-        showNetworkPoolLabel = false
-      }
-    ]
-    plan = { code = "vm-8192", id = 232 }
-    showScale = false
-    type = "instanceType.az.os.windows"
-    version = "20"
-    volumes = [
-      {
-        name = "root"
-        datastoreId = "autoCluster"
-        maxIOPS = null
-        maxStorage = 85899345920
-        readonlyName = false
-        rootVolume = true
-        size = 80
-        storageType = 1
-        vId = 850
-        volumeCustomizable = true
-      }
-    ]
-  }
   dateCreated = "2024-09-18T13:51:23.000Z"
   formType = "optionTypes"
   labels = [ "catalog-export" ]
-  lastUpdated = "2024-09-18T13:52:53.000Z"
+  lastUpdated = "2024-09-18T14:09:38.000Z"
   optionTypes = [ { code = "azureImageAcceptTerms" }, { code = "decision" } ]
   refType = "InstanceType"
 }
