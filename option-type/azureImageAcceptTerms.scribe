@@ -1,0 +1,13 @@
+resource "option-type" "azureImageAcceptTerms" {
+  code = "azureImageAcceptTerms"
+  name = "azureImageAcceptTerms"
+  uuid = "3953e10d-5bff-4352-a1d0-2239bc073927"
+  config = { _multiSelect = "" }
+  fieldContext = "config.customOptions"
+  fieldLabel = "Accept Image Terms:"
+  fieldName = "azureImageAcceptTerms"
+  optionList = { name = "azureImageAcceptTerms" }
+  optionSource = "list"
+  required = true
+  type = "typeahead"
+}

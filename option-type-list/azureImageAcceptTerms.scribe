@@ -1,0 +1,13 @@
+resource "option-type-list" "azureImageAcceptTerms" {
+  name = "azureImageAcceptTerms"
+  uuid = "6c59f824-5f26-4b6a-82bf-00af77e95075"
+  initialDataset = "[{\"name\": \"Yes\", \"value\": true}, {\"name\": \"No\", \"value\": false}]"
+  translationScript = <<EOFSCRIBE
+var x = 0; 
+var results = [];
+for (let x=0; x<data.length; x++) {
+     results.push({name: data[x].name, value: data[x].value})
+}
+EOFSCRIBE
+  type = "manual"
+}

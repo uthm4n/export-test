@@ -1,0 +1,12 @@
+resource "option-type" "decision" {
+  code = "decision"
+  name = "decision"
+  uuid = "02c8ddc2-40ad-4a36-9065-621d44836f23"
+  fieldContext = "config.customOptions"
+  fieldLabel = "Select a decision:"
+  fieldName = "decision"
+  labels = [ "ansible" ]
+  optionList = { name = "azureImageAcceptTerms" }
+  optionSource = "list"
+  type = "select"
+}
