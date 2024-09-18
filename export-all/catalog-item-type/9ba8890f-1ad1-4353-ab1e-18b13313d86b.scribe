@@ -1,0 +1,10 @@
+resource "catalog-item-type" "9ba8890f-1ad1-4353-ab1e-18b13313d86b" {
+  name = "custom windows server [with option types at instance type level]"
+  uuid = "9ba8890f-1ad1-4353-ab1e-18b13313d86b"
+  dateCreated = "2024-09-18T13:51:23.000Z"
+  formType = "optionTypes"
+  labels = [ "catalog-export" ]
+  lastUpdated = "2024-09-18T14:09:38.000Z"
+  optionTypes = [ { code = "azureImageAcceptTerms" }, { code = "decision" } ]
+  refType = "InstanceType"
+}
