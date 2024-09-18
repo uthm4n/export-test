@@ -1,9 +1,0 @@
-resource "catalog-item-type" "test" {
-  code = "test"
-  name = "exported-catalog-item"
-  uuid = "7d487944-67a7-411e-91e6-7e508e16e6fe"
-  dateCreated = "2024-05-14T17:21:10.000Z"
-  labels = [ { name = "exported" } ]
-  lastUpdated = "2024-05-22T11:24:36.000Z"
-  refType = "InstanceType"
-}
